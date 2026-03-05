@@ -121,3 +121,16 @@ input[type="url"]{width:100%;border:1px solid var(--line);border-radius:12px;pad
 .pill:hover{
   transform:translateY(-1px);
 }
+
+.toc{
+  margin: 10px 0 0;
+  padding-left: 18px; /* ระยะ bullet */
+}
+.toc li{ margin: 8px 0; }
+.toc a{
+  text-decoration: none;
+  font-weight: 150;
+}
+.toc a:hover{
+  text-decoration: underline;
+}

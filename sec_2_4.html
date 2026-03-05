@@ -107,6 +107,12 @@
 
           <div class="divider"></div>
 
+          <button class="btn" id="toggleMore22" type="button" aria-expanded="false" aria-controls="moreContent22">
+    อ่านเพิ่มเติม
+  </button>
+
+  <div id="moreContent22" hidden>
+
           <h3>คำอธิบายการดำเนินงานตามเกณฑ์</h3>
 
           <!-- ข้อ 1 -->
@@ -234,7 +240,7 @@
 
             
             </div>
-          </div>
+          
 
           <br>
 
@@ -577,8 +583,6 @@
               &emsp;โรงเรียนดาราวิทยาลัย ได้พัฒนาการจัดการศึกษาที่เสริมสร้างผู้เรียนให้มีผลสัมฤทธิ์ทางการเรียน มีความสามารถและสมรรถนะตามหลักสูตรสถานศึกษา เป็นนักคิด และเป็นผู้เรียนรู้ตลอดชีวิต โดยการส่งเสริมให้ครูสร้างนวัตกรรมการจัดการเรียนรู้โดยใช้กระบวนการพัฒนาบทเรียนร่วมกัน (Lesson Study : LS) ผ่านชุมชนการเรียนรู้ทางวิชาชีพ (Professional Learning Community : PLC) มีการแลกเปลี่ยนเรียนรู้และให้ข้อมูลสะท้อนกลับเพื่อพัฒนาและปรับปรุงการจัดการเรียนรู้ให้เกิดประสิทธิภาพสูงสุดผ่านกิจกรรมดังนี้
             </p>
 
-          
-
             <div class="figure">
               <img
                 src="https://pic.li/images/Screenshot-2026-03-04-170636.png"
@@ -587,24 +591,65 @@
               <div class="caption">หลักฐาน PLC/LS</div>
             </div>
           </div>
-
-        </div>
+  </div>
+        </div></div>
       
 
       <div class="card span4">
-        <h2>ลิงก์ Google Drive (เผื่อไว้)</h2>
-        <p class="small">วางลิงก์โฟลเดอร์/ไฟล์หลักฐานของหัวข้อนี้ (เก็บในเครื่อง)</p>
-        <input id="driveLinkInput" type="url" placeholder="https://drive.google.com/..." />
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
-          <button class="btn" id="saveDriveLink">บันทึกลิงก์</button>
-          <a class="btn" id="driveLinkBtn" href="#" target="_blank" rel="noopener">ยังไม่ใส่ลิงก์</a>
-        </div>
-      </div>
-    </div>
+  <h2>สารบัญ</h2>
+  <p class="small">คลิกเพื่อไปยังหน้าข้อย่อยของหัวข้อ 2.3</p>
 
-  </div>
+  <ul class="toc">
+    <li><a href="sec_2_4_1.html">ข้อ 1) ส่งเสริม สนับสนุน พัฒนาครู บุคลากร ให้มีความเชี่ยวชาญทางวิชาชีพ</a></li>
+    <li><a href="sec_2_4_2.html">ข้อ 2) จัดให้มีชุมชนการเรียนรู้ทางวิชาชีพ</a></li>
+    <li><a href="sec_2_4_3.html">ข้อ 3) นำชุมชนการเรียนรู้ทางวิชาชีพเข้ามาใช้ในการพัฒนางานและการเรียนรู้ของผู้เรียน</a></li>
+    <li><a href="sec_2_4_4.html">ข้อ 4) มีการตรวจสอบ ทบทวน การปฏิบัติงานของครู บุคลากร ที่มีผลต่อการเรียนรู้ของผู้เรียน</a></li>
+    <li><a href="sec_2_4_5.html">ข้อ 5) ถอดบทเรียนเพื่อสร้างนวัตกรรมหรือวิธีการที่เป็นแบบอย่างที่ดีที่ส่งผลต่อการเรียนรู้ของผู้เรียน</a></li>
+    <li><a href="sec_2_4_6.html">ข้อ 6) จัดให้ครูได้รับการอบรม ศึกษาดูงาน อย่างน้อยจำนวน 20 ชั่วโมงต่อปีการศึกษา</a></li>
+    <li><a href="sec_2_4_7.html">ข้อ 7) จัดให้ครูสอนตรงตามสาขาวิชาเอกหรือความถนัด</a></li>
+    <li><a href="sec_2_4_8.html">ข้อ 8) จัดให้มีชุมชนแห่งการเรียนรู้ทางวิชาชีพ (Professional Learning Communitity : PLC )</a></li>
+    </ul>
+
+  <div class="divider"></div>
+
+  <a class="btn" href="sec_2_4.html">เปิดหน้า 2.4 (ภาพรวม)</a>
+</div>
+      </div>
+          
+  
+      
+
+  
 
   <script src="assets/app.js"></script>
   <script>initDriveLink("2.4");</script>
+
+<script>
+  // existing
+  initDriveLink("2.2");
+
+  // toggle read more
+  (function () {
+    const btn = document.getElementById("toggleMore22");
+    const box = document.getElementById("moreContent22");
+    if (!btn || !box) return;
+
+    btn.addEventListener("click", () => {
+      const isHidden = box.hasAttribute("hidden");
+      if (isHidden) {
+        box.removeAttribute("hidden");
+        btn.textContent = "ซ่อน";
+        btn.setAttribute("aria-expanded", "true");
+      } else {
+        box.setAttribute("hidden", "");
+        btn.textContent = "อ่านเพิ่มเติม";
+        btn.setAttribute("aria-expanded", "false");
+        // optional: เลื่อนกลับขึ้นมาที่หัวข้อเวลาซ่อน
+        btn.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  })();
+</script>
+
 </body>
 </html>
